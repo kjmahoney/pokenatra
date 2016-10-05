@@ -1,0 +1,40 @@
+1. Create database
+
+1. Make Schema to make poke table
+
+
+CREATE TABLE pokemon (
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  cp INTEGER,
+  poke_type TEXT,
+  img_url TEXT
+);
+
+3. make a poke model on active record
+
+4. make an active record connection
+
+5. make app.rb
+
+
+2. Make a gemfile-
+
+source 'https://rubygems.org'
+
+gem "pg"
+gem "activerecord"
+gem "pry"
+gem "sinatra"
+gem "sinatra-contrib"
+
+3. Make app.rb
+
+needs links
+
+require "active_record"
+require "sinatra"
+require "sinatra/reloader"
+
+require_relative "db/connection"
+require_relative "models/pokemon"

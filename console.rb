@@ -9,26 +9,6 @@ require "active_record" # the ORM
 require_relative "db/connection"
 require_relative "models/pokemon"
 
-get "/pokemons" do
-  @pokemons = Pokemon.all
-  erb :"pokemon/index"
-end
-
-get "/pokemons/new" do
-  erb :"pokemon/new"
-end
-
-get "/pokemons/:id" do
-  @pokemons = Pokemon.find(params[:id])
-  erb :"pokemon/show"
-end
-
-post "/pokemons" do
-  Pokemon.create(params[:pokemon])
-  redirect "/pokemons"
-end
 
 
-
-
-# binding.pry
+binding.pry

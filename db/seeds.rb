@@ -1,6 +1,6 @@
 require 'active_record'
-require 'ffaker'
 require 'pg'
+require 'ffaker'
 require_relative 'connection'
 require_relative '../models/pokemon'
 

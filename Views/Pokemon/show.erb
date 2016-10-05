@@ -2,7 +2,18 @@
 
 <%=@pokemons.name %>
 
-<!-- <form action="/pokemon<%=@pokemons.id%>" method="post">
+<img src="<%=@pokemons.img_url%>"/>
+
+<ul>
+<li><%=@pokemons.cp %></li>
+<li><%=@pokemons.poke_type %></li>
+</ul>
+
+<form action="/pokemons/<%=@pokemons.id%>" method="post">
   <input type="hidden" name="_method" value="delete">
   <button type="submit" name="button">delete pokemon</button>
-</form> -->
+</form>
+
+<a href="/pokemons/<%=@pokemons.id%>/edit">Edit this pokemon</a>
+
+<a href="/pokemons">Return to all</a>

@@ -1,0 +1,15 @@
+<h2>Trainerdex</h2>
+
+<ul>
+<% @trainers.each do |trainer| %>
+
+  <li><a href="trainers/<%=trainer.id%>"><%=trainer.name%></a> </li>
+
+<% end %>
+</ul>
+
+<a href="/trainers/new">Create New Trainer</a>
+
+<a href="/pokemons">Return to Pokedex</a>
+
+<!-- <a href="pokemons/new">Create New Trainer!</a> -->

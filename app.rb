@@ -8,6 +8,7 @@ require "active_record" # the ORM
 
 require_relative "db/connection"
 require_relative "models/pokemon"
+require_relative "models/trainer"
 
 get "/pokemons" do
   @pokemons = Pokemon.all
@@ -45,6 +46,47 @@ delete "/pokemons/:id" do
   redirect "/pokemons"
 end
 
+get "/trainers" do
+  @trainers = Trainer.all
+  erb :"trainer/index"
+end
+
+get "/trainers/:id/edit" do
+  @trainers = Trainer.find(params[:id])
+  erb :"trainer/edit"
+end
+
+get "/trainers/new" do
+  erb :"trainer/new"
+end
+
+put "/trainers/:id" do
+  @trainers = Trainer.find(params[:id])
+  @trainers.update(params[:trainer])
+  redirect "/trainers"
+end
+
+get "/trainers/:id" do
+  @trainers = Trainer.find(params[:id])
+  erb :"trainer/show"
+end
+
+post "/trainers" do
+  Trainer.create(params[:trainer])
+  redirect "/trainers"
+end
+
+put "/trainers/:id" do
+  @trainers = Trainer.find(params[:id])
+  @trainers.update(params[:trainer])
+  redirect "/trainers"
+end
+
+delete "/trainers/:id" do
+  @trainers = Trainer.find(params[:id])
+  @trainers.destroy
+  redirect "/trainers"
+end
 
 
 

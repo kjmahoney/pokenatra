@@ -1,0 +1,18 @@
+<h2>Edit Trainer</h2>
+
+<form action="/trainers/<%= @trainers.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <label>First Name</label>
+  <input type="text" name="trainer[name]" value="<%= @trainers.name %>">
+
+  <label>Level</label>
+  <input type="text" name="trainer[level]" value="<%= @trainers.level %>">
+
+  <label>Image</label>
+  <input type="text" name="trainer[img_url]" value="<%= @trainers.img_url %>">
+
+  <button type="submit">Submit</button>
+</form>
+
+<a href="/trainers">Return to Trainerdex</a>
